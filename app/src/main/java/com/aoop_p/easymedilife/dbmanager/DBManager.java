@@ -16,6 +16,10 @@ public class DBManager {
     {
         url = url+dburl;
     }
+    public DBManager()
+    {
+        url = url+"localhost/easymedilife";
+    }
 
     public boolean connect()
     {
