@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">EasyMediLife</string>
+    <string name="dburl">EX 192.168.0.100/easymedilife</string>
+    <string name="dbqery">Enter DataBase url</string>
+    <string name="save">Save</string>
+
+    <string name="action_settings">Settings</string>
+
 </resources>
