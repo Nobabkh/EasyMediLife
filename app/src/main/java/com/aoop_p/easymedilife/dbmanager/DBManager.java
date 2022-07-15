@@ -10,6 +10,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 
 public class DBManager {
     private URL url;
@@ -196,6 +197,50 @@ public class DBManager {
         }
 
         return fullline.toString();
+    }
+    public ArrayList<String> getdistrict()
+    {
+        String line;
+        ArrayList<String> dist = new ArrayList<>();
+        String host = "https://firstsalebd.com/api/getdistrict.php", user = "firstsal_EasyMediLife", pass = "EasyMediLife";
+        try
+        {
+
+            url = new URL(host);
+
+            http = (HttpURLConnection) url.openConnection();
+            http.setRequestMethod("POST");
+            http.setDoInput(true);
+            http.setDoOutput(true);
+
+            out = http.getOutputStream();
+
+
+            write = new BufferedWriter(new OutputStreamWriter(out, StandardCharsets.UTF_8));
+            String data = URLEncoder.encode("user", "UTF-8")+"="+URLEncoder.encode(user, "UTF-8")
+                    +"&&"+URLEncoder.encode("pass", "UTF-8")+"="+URLEncoder.encode(pass, "UTF-8");
+
+            write.write(data);
+            write.flush();
+            write.close();
+            out.close();
+            in = http.getInputStream();
+            read = new BufferedReader(new InputStreamReader(in, StandardCharsets.ISO_8859_1));
+
+            while((line = read.readLine()) != null)
+            {
+                dist.add(line);
+            }
+            read.close();
+            in.close();
+
+        }
+        catch (Exception e) {
+            // TODO: handle exception
+        }
+
+        return dist;
+
     }
 
 }
