@@ -3,6 +3,11 @@
     <string name="dburl">EX 192.168.0.100/easymedilife</string>
     <string name="dbqery">Enter DataBase url</string>
     <string name="save">Save</string>
+    <string name="addist">Enter District name</string>
+    <string name="distex">Ex Dhaka</string>
+    <string name="email">Enter your Email</string>
+    <string name="pass">Enter your password</string>
+    <string name="login">Login</string>
 
     <string name="action_settings">Settings</string>
 
