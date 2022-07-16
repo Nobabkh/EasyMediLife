@@ -14,5 +14,8 @@
         <item>Select</item>
         <item>Select item</item>
     </string-array>
+    <string name="subdis">Ex Mirpur</string>
+    <string name="add_subdis">Ad Subdistrict</string>
+    <string name="add_dis">Ad District</string>
 
 </resources>
