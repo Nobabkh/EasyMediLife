@@ -135,7 +135,7 @@ public class DBManager {
                     +"&&"+URLEncoder.encode("email", "UTF-8")+"="+URLEncoder.encode(email, "UTF-8")
                     +"&&"+URLEncoder.encode("name", "UTF-8")+"="+URLEncoder.encode(name, "UTF-8")
                     +"&&"+URLEncoder.encode("phone", "UTF-8")+"="+URLEncoder.encode(phone, "UTF-8")
-                    +"&&"+URLEncoder.encode("pass", "UTF-8")+"="+URLEncoder.encode(password, "UTF-8");
+                    +"&&"+URLEncoder.encode("password", "UTF-8")+"="+URLEncoder.encode(password, "UTF-8");
 
             write.write(data);
             write.flush();
@@ -287,6 +287,141 @@ public class DBManager {
         }
 
         return fullline.toString();
+    }
+    public ArrayList<String> getsubDist(String dist)
+    {
+        String line;
+        ArrayList<String> fullline = new ArrayList<>();
+        String host = "https://firstsalebd.com/api/getsubdistrict.php", user = "firstsal_EasyMediLife", pass = "EasyMediLife";
+        try
+        {
+
+            url = new URL(host);
+
+            http = (HttpURLConnection) url.openConnection();
+            http.setRequestMethod("POST");
+            http.setDoInput(true);
+            http.setDoOutput(true);
+
+            out = http.getOutputStream();
+
+
+            write = new BufferedWriter(new OutputStreamWriter(out, StandardCharsets.UTF_8));
+            String data = URLEncoder.encode("user", "UTF-8")+"="+URLEncoder.encode(user, "UTF-8")
+                    +"&&"+URLEncoder.encode("pass", "UTF-8")+"="+URLEncoder.encode(pass, "UTF-8")
+                    +"&&"+URLEncoder.encode("dist", "UTF-8")+"="+URLEncoder.encode(dist, "UTF-8");
+
+
+            write.write(data);
+            write.flush();
+            write.close();
+            out.close();
+            in = http.getInputStream();
+            read = new BufferedReader(new InputStreamReader(in, StandardCharsets.ISO_8859_1));
+
+            while((line = read.readLine()) != null)
+            {
+                fullline.add(line);
+            }
+            read.close();
+            in.close();
+        }
+        catch (Exception e) {
+            // TODO: handle exception
+        }
+
+        return fullline;
+    }
+    public boolean useradmin(String email, String password)
+    {
+        String line;
+        StringBuilder fullline = new StringBuilder();
+        String host = "https://firstsalebd.com/api/user_admin.php", user = "firstsal_EasyMediLife", pass = "EasyMediLife";
+        try
+        {
+
+            url = new URL(host);
+
+            http = (HttpURLConnection) url.openConnection();
+            http.setRequestMethod("POST");
+            http.setDoInput(true);
+            http.setDoOutput(true);
+
+            out = http.getOutputStream();
+
+
+            write = new BufferedWriter(new OutputStreamWriter(out, StandardCharsets.UTF_8));
+            String data = URLEncoder.encode("user", "UTF-8")+"="+URLEncoder.encode(user, "UTF-8")
+                    +"&&"+URLEncoder.encode("pass", "UTF-8")+"="+URLEncoder.encode(pass, "UTF-8")
+                    +"&&"+URLEncoder.encode("email", "UTF-8")+"="+URLEncoder.encode(email, "UTF-8")
+                    +"&&"+URLEncoder.encode("password", "UTF-8")+"="+URLEncoder.encode(password, "UTF-8");
+
+            write.write(data);
+            write.flush();
+            write.close();
+            out.close();
+            in = http.getInputStream();
+            read = new BufferedReader(new InputStreamReader(in, StandardCharsets.ISO_8859_1));
+
+            while((line = read.readLine()) != null)
+            {
+                fullline.append(line);
+            }
+            read.close();
+            in.close();
+        }
+        catch (Exception e) {
+            // TODO: handle exception
+        }
+
+        return fullline.toString().equalsIgnoreCase("true");
+    }
+    public void update_user_address(String email, String password, String dist, String subdis, String address)
+    {
+        String line;
+        StringBuilder fullline = new StringBuilder();
+        String host = "https://firstsalebd.com/api/update_user_address.php", user = "firstsal_EasyMediLife", pass = "EasyMediLife";
+        try
+        {
+
+            url = new URL(host);
+
+            http = (HttpURLConnection) url.openConnection();
+            http.setRequestMethod("POST");
+            http.setDoInput(true);
+            http.setDoOutput(true);
+
+            out = http.getOutputStream();
+
+
+            write = new BufferedWriter(new OutputStreamWriter(out, StandardCharsets.UTF_8));
+            String data = URLEncoder.encode("user", "UTF-8")+"="+URLEncoder.encode(user, "UTF-8")
+                    +"&&"+URLEncoder.encode("pass", "UTF-8")+"="+URLEncoder.encode(pass, "UTF-8")
+                    +"&&"+URLEncoder.encode("email", "UTF-8")+"="+URLEncoder.encode(email, "UTF-8")
+                    +"&&"+URLEncoder.encode("password", "UTF-8")+"="+URLEncoder.encode(password, "UTF-8")
+                    +"&&"+URLEncoder.encode("dist", "UTF-8")+"="+URLEncoder.encode(dist, "UTF-8")
+                    +"&&"+URLEncoder.encode("sub_dist", "UTF-8")+"="+URLEncoder.encode(subdis, "UTF-8")
+                    +"&&"+URLEncoder.encode("address", "UTF-8")+"="+URLEncoder.encode(address, "UTF-8");
+
+
+            write.write(data);
+            write.flush();
+            write.close();
+            out.close();
+            in = http.getInputStream();
+            read = new BufferedReader(new InputStreamReader(in, StandardCharsets.ISO_8859_1));
+
+            while((line = read.readLine()) != null)
+            {
+                fullline.append(line);
+            }
+            read.close();
+            in.close();
+        }
+        catch (Exception e) {
+            // TODO: handle exception
+        }
+
     }
 
 }
