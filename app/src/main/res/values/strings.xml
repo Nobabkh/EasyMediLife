@@ -19,6 +19,26 @@
     <string name="add_dis">Ad District</string>
 
     <string name="app_slogan">Hope To Make Things Easy</string>
+    <string name="email_text">E-mail:</string>
+    <string name="email_hint">Enter your email address</string>
+    <string name="name_text">Name:</string>
+    <string name="name_hint">Enter your name</string>
+    <string name="phone_text">Phone:</string>
+    <string name="phone_hint">Enter your phone number</string>
+    <string name="password_text">Password:</string>
+    <string name="password_hint">Enter a strong password</string>
+    <string name="message_text">Already registered?</string>
+    <string name="button_text">Click here to Login</string>
+    <string name="registration_button_text">Register</string>
+    <string name="user_id_text">User Id:</string>
+    <string name="user_id_hint">Enter your user id</string>
+    <string name="password__hint">Enter your password</string>
+    <string name="login_button_text">Login</string>
+    <string name="register_message_text">Not registered Yet?</string>
+    <string name="register_button_text">Click here to Register</string>
+
+
+
 
 
 
