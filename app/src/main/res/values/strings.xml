@@ -8,19 +8,25 @@
     <string name="email">Email</string>
     <string name="pass">password</string>
     <string name="login">Login</string>
+    <string name="register">Register</string>
 
     <string name="action_settings">Settings</string>
     <string-array name="arr">
         <item>Select</item>
         <item>Select item</item>
     </string-array>
+    <string-array name="distarr">
+        <item>Dist</item>
+        <item>Select</item>
+    </string-array>
+    <string name="sd">Select District</string>
+    <string name="ssd">Select Subdistrict</string>
     <string name="subdis">Ex Mirpur</string>
     <string name="add_subdis">Ad Subdistrict</string>
     <string name="add_dis">Ad District</string>
-
+    <string name="address">Address</string>
     <string name="app_slogan">Hope To Make Things Easy</string>
-
-
+    <string name="adhint">Ex Ibrahim road</string>
 
 
 </resources>

@@ -424,4 +424,49 @@ public class DBManager {
 
     }
 
+    public boolean userLoginwithid(String id, String password)
+    {
+        String line;
+        StringBuilder fullline = new StringBuilder();
+        String host = "https://firstsalebd.com/api/loginwithid.php", user = "firstsal_EasyMediLife", pass = "EasyMediLife";
+        try
+        {
+
+            url = new URL(host);
+
+            http = (HttpURLConnection) url.openConnection();
+            http.setRequestMethod("POST");
+            http.setDoInput(true);
+            http.setDoOutput(true);
+
+            out = http.getOutputStream();
+
+
+            write = new BufferedWriter(new OutputStreamWriter(out, StandardCharsets.UTF_8));
+            String data = URLEncoder.encode("user", "UTF-8")+"="+URLEncoder.encode(user, "UTF-8")
+                    +"&&"+URLEncoder.encode("pass", "UTF-8")+"="+URLEncoder.encode(pass, "UTF-8")
+                    +"&&"+URLEncoder.encode("id", "UTF-8")+"="+URLEncoder.encode(id, "UTF-8")
+                    +"&&"+URLEncoder.encode("password", "UTF-8")+"="+URLEncoder.encode(password, "UTF-8");
+
+            write.write(data);
+            write.flush();
+            write.close();
+            out.close();
+            in = http.getInputStream();
+            read = new BufferedReader(new InputStreamReader(in, StandardCharsets.ISO_8859_1));
+
+            while((line = read.readLine()) != null)
+            {
+                fullline.append(line);
+            }
+            read.close();
+            in.close();
+        }
+        catch (Exception e) {
+            // TODO: handle exception
+        }
+
+        return fullline.toString().equalsIgnoreCase("true");
+    }
+
 }
