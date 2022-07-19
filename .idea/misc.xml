@@ -3,8 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< Updated upstream
         <entry key="..\:/Users/nirob/OneDrive/Desktop/EasyMediLife/EasyMediLife/app/src/main/res/layout/activity_add_district.xml" value="0.14130434782608695" />
         <entry key="..\:/Users/nirob/OneDrive/Desktop/EasyMediLife/EasyMediLife/app/src/main/res/layout/activity_add_subdis.xml" value="0.14130434782608695" />
+=======
+        <entry key="..\:/Users/IR/Documents/GitHub/EasyMediLife/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1635" />
+        <entry key="..\:/Users/IR/Documents/GitHub/EasyMediLife/app/src/main/res/drawable/background_gradient.xml" value="0.1635" />
+        <entry key="..\:/Users/IR/Documents/GitHub/EasyMediLife/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1635" />
+        <entry key="..\:/Users/IR/Documents/GitHub/EasyMediLife/app/src/main/res/layout/activity_add_district.xml" value="0.2421875" />
+        <entry key="..\:/Users/IR/Documents/GitHub/EasyMediLife/app/src/main/res/layout/activity_login.xml" value="0.2421875" />
+        <entry key="..\:/Users/IR/Documents/GitHub/EasyMediLife/app/src/main/res/layout/activity_registration.xml" value="0.2421875" />
+>>>>>>> Stashed changes
         <entry key="..\:/Users/nirob/OneDrive/Desktop/EasyMediLife/EasyMediLife/app/src/main/res/layout/activity_changedburl.xml" value="0.14130434782608695" />
         <entry key="..\:/Users/nirob/OneDrive/Desktop/EasyMediLife/EasyMediLife/app/src/main/res/layout/activity_googleads.xml" value="0.14130434782608695" />
         <entry key="..\:/Users/nirob/OneDrive/Desktop/EasyMediLife/EasyMediLife/app/src/main/res/layout/activity_login.xml" value="0.14130434782608695" />
