@@ -1,5 +1,6 @@
 package com.aoop_p.easymedilife.dbmanager;
 
+import android.util.Log;
 import android.widget.ArrayAdapter;
 
 import java.io.BufferedReader;
@@ -232,6 +233,7 @@ public class DBManager {
             while((line = read.readLine()) != null)
             {
                 dist.add(line);
+                Log.i("errormes", line);
             }
             read.close();
             in.close();
@@ -322,12 +324,13 @@ public class DBManager {
             while((line = read.readLine()) != null)
             {
                 fullline.add(line);
+                Log.i("errormes", line);
             }
             read.close();
             in.close();
         }
         catch (Exception e) {
-            // TODO: handle exception
+            Log.i("errormes", "connection failed");
         }
 
         return fullline;

@@ -36,11 +36,12 @@ public class AddDistrict extends AppCompatActivity {
         adsubd.setOnClickListener(view -> addsubdis());
     }
     String dist, subdis;
+    ArrayList<String> districts;
     void addsubdis()
     {
         setContentView(R.layout.activity_add_subdis);
-        ArrayList<String> districts = db.getdistrict();
-        Spinner spinner = findViewById(R.id.spinner);
+        districts = db.getdistrict();
+        Spinner spinner = findViewById(R.id.spinnerdis);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, districts);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(arrayAdapter);

@@ -19,10 +19,13 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         db = new DBManager();
         checkconnectionandupdate();
+        startActivity(new Intent(Login.this, Registration.class));/*
         Button bt = findViewById(R.id.button);
         bt.setOnClickListener(view -> {
             EditText mail = findViewById(R.id.editTextTextEmailAddress);
@@ -35,7 +38,8 @@ public class Login extends AppCompatActivity {
             {
                 Toast.makeText(Login.this, "Failed to login", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
+
 
     }
 

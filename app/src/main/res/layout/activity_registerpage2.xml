@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Registerpage2">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/textView5"
@@ -49,7 +48,7 @@
         app:layout_constraintVertical_bias="0.34" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinnerdis"
         android:layout_width="200dp"
         android:layout_height="59dp"
         android:dropDownWidth="wrap_content"
@@ -78,7 +77,7 @@
         app:layout_constraintVertical_bias="0.19999999" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/addressedittext"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:ems="10"

@@ -18,7 +18,7 @@
         app:layout_constraintVertical_bias="0.00999999" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinnerdis"
         android:layout_width="249dp"
         android:layout_height="59dp"
         android:dropDownWidth="wrap_content"

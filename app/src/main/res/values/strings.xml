@@ -9,6 +9,8 @@
     <string name="pass">password</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
+    <string name="Welcome">Welcome User</string>
+    <string name="admin">You are now interacting as Admin</string>
 
     <string name="action_settings">Settings</string>
     <string-array name="arr">
@@ -27,6 +29,9 @@
     <string name="address">Address</string>
     <string name="app_slogan">Hope To Make Things Easy</string>
     <string name="adhint">Ex Ibrahim road</string>
+    <string name="addhos">Add Hospital</string>
+    <string name="adddoctor">Add Doctor</string>
+    <string name="addsymp">Add symptoms</string>
 
 
 </resources>
