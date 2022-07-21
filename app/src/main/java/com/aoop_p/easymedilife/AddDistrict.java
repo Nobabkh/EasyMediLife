@@ -1,5 +1,6 @@
 package com.aoop_p.easymedilife;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -17,11 +18,22 @@ import java.util.ArrayList;
 
 public class AddDistrict extends AppCompatActivity {
     DBManager db;
+    Bundle extra;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         db = new DBManager();
-        adddis();
+        extra = getIntent().getExtras();
+        int a = extra.getInt("extra");
+        switch (a)
+        {
+            case 0:
+                adddis();
+                break;
+            case 1:
+                addsubdis();
+                break;
+        }
     }
     void adddis()
     {
@@ -37,6 +49,7 @@ public class AddDistrict extends AppCompatActivity {
     }
     String dist, subdis;
     ArrayList<String> districts;
+    @SuppressLint("SetTextI18n")
     void addsubdis()
     {
         setContentView(R.layout.activity_add_subdis);

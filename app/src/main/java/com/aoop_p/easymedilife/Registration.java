@@ -28,9 +28,14 @@ public class Registration extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         db =new DBManager();
-        setContentView(R.layout.activity_registration);
-        Log.i("errormes", "lunched firstpage");
+        registrationpageone();
+
         registerpagetwo();
+    }
+
+    void registrationpageone()
+    {
+        setContentView(R.layout.activity_registration);
     }
 
     String dist = "", subdist ="", email, name, pass;

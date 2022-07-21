@@ -42,7 +42,7 @@
         app:layout_constraintVertical_bias="0.06999999" />
 
     <TableLayout
-        android:layout_width="408dp"
+        android:layout_width="350dp"
         android:layout_height="313dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,53 +53,53 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <Button
                 android:id="@+id/button6"
-                android:layout_weight="1"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/add_dis"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:layout_weight="1"
+                android:text="@string/add_dis" />
 
             <Button
                 android:id="@+id/button7"
-                android:layout_weight="1"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/add_subdis"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:layout_weight="1"
+                android:text="@string/add_subdis" />
 
             <Button
                 android:id="@+id/button8"
-                android:layout_weight="1"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/addhos"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:layout_weight="1"
+                android:text="@string/addhos" />
 
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <Button
                 android:id="@+id/button9"
-                android:layout_weight="1"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/adddoctor"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:layout_weight="1"
+                android:text="@string/adddoctor" />
 
             <Button
                 android:id="@+id/button10"
-                android:layout_weight="1"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/addsymp"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:layout_weight="1"
+                android:text="@string/addsymp" />
         </TableRow>
 
     </TableLayout>
