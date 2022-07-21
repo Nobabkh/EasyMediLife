@@ -472,4 +472,5 @@ public class DBManager {
         return fullline.toString().equalsIgnoreCase("true");
     }
 
+
 }
