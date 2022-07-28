@@ -3,6 +3,7 @@ package com.aoop_p.easymedilife;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -27,6 +28,13 @@ public class Login extends AppCompatActivity {
         checkconnectionandupdate();
 
         Button bt = findViewById(R.id.button);
+        Button regactivity = findViewById(R.id.Buttonres);
+        regactivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Login.this, Registration.class));
+            }
+        });
         bt.setOnClickListener(view -> {
             EditText mail = findViewById(R.id.editTextTextEmailAddress);
             EditText pass = findViewById(R.id.editTextTextPassword);

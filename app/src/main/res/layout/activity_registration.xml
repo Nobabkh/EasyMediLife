@@ -199,7 +199,7 @@
             android:textStyle="bold"
             app:drawableStartCompat="@drawable/ic_baseline_how_to_reg_24" />
         <Button
-            android:id="@+id/ButtonId"
+            android:id="@+id/Buttonres"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button_text"
