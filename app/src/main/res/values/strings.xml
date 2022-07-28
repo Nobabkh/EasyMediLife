@@ -21,18 +21,36 @@
         <item>Dist</item>
         <item>Select</item>
     </string-array>
-    <string name="sd">Select District</string>
-    <string name="ssd">Select Subdistrict</string>
+    <string name="sd">Select District:</string>
+    <string name="ssd">Select Subdistrict:</string>
     <string name="subdis">Ex Mirpur</string>
     <string name="add_subdis">Ad Subdistrict</string>
     <string name="add_dis">Ad District</string>
-    <string name="address">Address</string>
+    <string name="address">Address:</string>
     <string name="app_slogan">Hope To Make Things Easy</string>
     <string name="adhint">Ex Ibrahim road</string>
     <string name="addhos">Add Hospital</string>
     <string name="adddoctor">Add Doctor</string>
     <string name="addsymp">Add symptoms</string>
     <string name="e_mail">E-mail:</string>
+
+
+    <string name="email_text">E-mail:</string>
+    <string name="email_hint">Enter your email address</string>
+    <string name="name_text">Name:</string>
+    <string name="name_hint">Enter your name</string>
+    <string name="phone_text">Phone:</string>
+    <string name="phone_hint">Enter your phone number</string>
+    <string name="password_text">Password:</string>
+    <string name="password_hint">Enter a strong password</string>
+    <string name="next_button_text">Next</string>
+    <string name="message_text">Already registered?</string>
+    <string name="button_text">Click here to Login</string>
+    <string name="login_password_hint">Enter your password</string>
+    <string name="loginpage_message">Not Registered yet?</string>
+    <string name="loginpage_message_button">Click here to register</string>
+
+
 
 
 </resources>
