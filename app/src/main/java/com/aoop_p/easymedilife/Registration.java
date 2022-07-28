@@ -2,6 +2,7 @@ package com.aoop_p.easymedilife;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
@@ -30,15 +31,38 @@ public class Registration extends AppCompatActivity {
         db =new DBManager();
         registrationpageone();
 
-        registerpagetwo();
     }
 
     void registrationpageone()
     {
         setContentView(R.layout.activity_registration);
+        EditText emailt = findViewById(R.id.EmailEditTextId);
+        EditText namet = findViewById(R.id.NameEditTextId);
+        EditText phonet = findViewById(R.id.PhoneEditTextId);
+        EditText passt = findViewById(R.id.PasswordEditTextId);
+        Button next = findViewById(R.id.RegisterButtonId);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                email = emailt.getText().toString();
+                name = namet.getText().toString();
+                phone = phonet.getText().toString();
+                pass = passt.getText().toString();
+                if (db.register(email, name, phone, pass)){
+                    registerpagetwo();
+                }
+            }
+        });
+        Button login = findViewById(R.id.Buttonres);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Registration.this, Login.class));
+            }
+        });
     }
 
-    String dist = "", subdist ="", email, name, pass;
+    String dist = "", subdist ="", email, name, pass, phone;
     ArrayList<String> subdistricts = null;
     ArrayList<String> districts = null;
 
@@ -46,24 +70,19 @@ public class Registration extends AppCompatActivity {
             districts = new ArrayList<>();
             subdistricts = new ArrayList<>();
         setContentView(R.layout.activity_registerpage2);
-        Log.i("errormes", "lunched secondtpage");
         Log.i("errormes", db.connect());
         districts = db.getdistrict();
-        for(int i = 0; i < districts.size(); i++)
-        {
-            Log.i("errormes", districts.get(i));
-        }
         Spinner spinnerdis = findViewById(R.id.spinnerdis);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, districts);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerdis.setAdapter(arrayAdapter);
-        Log.i("errormes", "passed arrayadapter");
+
         spinnerdis.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 dist = parent.getItemAtPosition(position).toString();
-                Log.i("errormes", "selected"+dist);
+
                 subdisfunc();
             }
 
@@ -96,7 +115,15 @@ public class Registration extends AppCompatActivity {
                     EditText addredd = findViewById(R.id.addressedittext);
                     String address = addredd.getText().toString();
                     db.update_user_address(email, pass, dist, subdist, address);
+                    startActivity(new Intent(Registration.this, Login.class));
                 }
+            }
+        });
+        Button bclog = findViewById(R.id.Buttonres1);
+        bclog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Registration.this, Login.class));
             }
         });
     }
