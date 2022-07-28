@@ -471,6 +471,216 @@ public class DBManager {
 
         return fullline.toString().equalsIgnoreCase("true");
     }
+    void addhospital(String dist, String subdist, String hospital)
+    {
+        String line;
+        StringBuilder fullline = new StringBuilder();
+        String host = "https://firstsalebd.com/api/addhopital.php", user = "firstsal_EasyMediLife", pass = "EasyMediLife";
+        try {
+
+            url = new URL(host);
+
+            http = (HttpURLConnection) url.openConnection();
+            http.setRequestMethod("POST");
+            http.setDoInput(true);
+            http.setDoOutput(true);
+
+            out = http.getOutputStream();
+
+
+            write = new BufferedWriter(new OutputStreamWriter(out, StandardCharsets.UTF_8));
+            String data = URLEncoder.encode("user", "UTF-8") + "=" + URLEncoder.encode(user, "UTF-8")
+                    + "&&" + URLEncoder.encode("pass", "UTF-8") + "=" + URLEncoder.encode(pass, "UTF-8")
+                    + "&&" + URLEncoder.encode("dist", "UTF-8") + "=" + URLEncoder.encode(dist, "UTF-8")
+                    + "&&" + URLEncoder.encode("subdist", "UTF-8") + "=" + URLEncoder.encode(subdist, "UTF-8")
+                    + "&&" + URLEncoder.encode("hospital", "UTF-8") + "=" + URLEncoder.encode(hospital, "UTF-8");
+
+            write.write(data);
+            write.flush();
+            write.close();
+            out.close();
+            in = http.getInputStream();
+            read = new BufferedReader(new InputStreamReader(in, StandardCharsets.ISO_8859_1));
+
+            while ((line = read.readLine()) != null) {
+                fullline.append(line);
+            }
+            read.close();
+            in.close();
+        }
+        catch(Exception e)
+        {
+
+        }
+    }
+
+    public void addsymtomswithdescreption(String symptom, String descreption)
+    {
+        String line;
+        StringBuilder fullline = new StringBuilder();
+        String host = "https://firstsalebd.com/api/addsymptom.php", user = "firstsal_EasyMediLife", pass = "EasyMediLife";
+        try {
+
+            url = new URL(host);
+
+            http = (HttpURLConnection) url.openConnection();
+            http.setRequestMethod("POST");
+            http.setDoInput(true);
+            http.setDoOutput(true);
+
+            out = http.getOutputStream();
+
+
+            write = new BufferedWriter(new OutputStreamWriter(out, StandardCharsets.UTF_8));
+            String data = URLEncoder.encode("user", "UTF-8") + "=" + URLEncoder.encode(user, "UTF-8")
+                    + "&&" + URLEncoder.encode("pass", "UTF-8") + "=" + URLEncoder.encode(pass, "UTF-8")
+                    + "&&" + URLEncoder.encode("symptom", "UTF-8") + "=" + URLEncoder.encode(symptom, "UTF-8")
+                    + "&&" + URLEncoder.encode("description", "UTF-8") + "=" + URLEncoder.encode(descreption, "UTF-8");
+
+            write.write(data);
+            write.flush();
+            write.close();
+            out.close();
+            in = http.getInputStream();
+            read = new BufferedReader(new InputStreamReader(in, StandardCharsets.ISO_8859_1));
+
+            while ((line = read.readLine()) != null) {
+                fullline.append(line);
+            }
+            read.close();
+            in.close();
+        }
+        catch(Exception e)
+        {
+
+        }
+    }
+    public void addsymptodoctor(String doctor, String symptoms)
+    {
+        String line;
+        StringBuilder fullline = new StringBuilder();
+        String host = "https://firstsalebd.com/api/addsymtodoc.php", user = "firstsal_EasyMediLife", pass = "EasyMediLife";
+        try {
+
+            url = new URL(host);
+
+            http = (HttpURLConnection) url.openConnection();
+            http.setRequestMethod("POST");
+            http.setDoInput(true);
+            http.setDoOutput(true);
+
+            out = http.getOutputStream();
+
+
+            write = new BufferedWriter(new OutputStreamWriter(out, StandardCharsets.UTF_8));
+            String data = URLEncoder.encode("user", "UTF-8") + "=" + URLEncoder.encode(user, "UTF-8")
+                    + "&&" + URLEncoder.encode("pass", "UTF-8") + "=" + URLEncoder.encode(pass, "UTF-8")
+                    + "&&" + URLEncoder.encode("symptom", "UTF-8") + "=" + URLEncoder.encode(symptoms, "UTF-8")
+                    + "&&" + URLEncoder.encode("doctor", "UTF-8") + "=" + URLEncoder.encode(doctor, "UTF-8");
+
+            write.write(data);
+            write.flush();
+            write.close();
+            out.close();
+            in = http.getInputStream();
+            read = new BufferedReader(new InputStreamReader(in, StandardCharsets.ISO_8859_1));
+
+            while ((line = read.readLine()) != null) {
+                fullline.append(line);
+            }
+            read.close();
+            in.close();
+        }
+        catch(Exception e)
+        {
+
+        }
+    }
+    public ArrayList<String> gethospital(String district, String subdist)
+    {
+        String line;
+        ArrayList<String> fulline = new ArrayList<>();
+        String host = "https://firstsalebd.com/api/gethopitals.php", user = "firstsal_EasyMediLife", pass = "EasyMediLife";
+        try {
+
+            url = new URL(host);
+
+            http = (HttpURLConnection) url.openConnection();
+            http.setRequestMethod("POST");
+            http.setDoInput(true);
+            http.setDoOutput(true);
+
+            out = http.getOutputStream();
+
+
+            write = new BufferedWriter(new OutputStreamWriter(out, StandardCharsets.UTF_8));
+            String data = URLEncoder.encode("user", "UTF-8") + "=" + URLEncoder.encode(user, "UTF-8")
+                    + "&&" + URLEncoder.encode("pass", "UTF-8") + "=" + URLEncoder.encode(pass, "UTF-8")
+                    + "&&" + URLEncoder.encode("district", "UTF-8") + "=" + URLEncoder.encode(district, "UTF-8")
+                    + "&&" + URLEncoder.encode("subdist", "UTF-8") + "=" + URLEncoder.encode(subdist, "UTF-8");
+
+            write.write(data);
+            write.flush();
+            write.close();
+            out.close();
+            in = http.getInputStream();
+            read = new BufferedReader(new InputStreamReader(in, StandardCharsets.ISO_8859_1));
+
+            while ((line = read.readLine()) != null) {
+                fulline.add(line);
+            }
+            read.close();
+            in.close();
+        }
+        catch(Exception e)
+        {
+
+        }
+        return  fulline;
+    }
+
+    public ArrayList<String> getdoctoronlocation(String dist, String subdist)
+    {
+        String line;
+        ArrayList<String> fulline = new ArrayList<>();
+        String host = "https://firstsalebd.com/api/getdoctor.php", user = "firstsal_EasyMediLife", pass = "EasyMediLife";
+        try {
+
+            url = new URL(host);
+
+            http = (HttpURLConnection) url.openConnection();
+            http.setRequestMethod("POST");
+            http.setDoInput(true);
+            http.setDoOutput(true);
+
+            out = http.getOutputStream();
+
+
+            write = new BufferedWriter(new OutputStreamWriter(out, StandardCharsets.UTF_8));
+            String data = URLEncoder.encode("user", "UTF-8") + "=" + URLEncoder.encode(user, "UTF-8")
+                    + "&&" + URLEncoder.encode("pass", "UTF-8") + "=" + URLEncoder.encode(pass, "UTF-8")
+                    + "&&" + URLEncoder.encode("district", "UTF-8") + "=" + URLEncoder.encode(dist, "UTF-8")
+                    + "&&" + URLEncoder.encode("subdist", "UTF-8") + "=" + URLEncoder.encode(subdist, "UTF-8");
+
+            write.write(data);
+            write.flush();
+            write.close();
+            out.close();
+            in = http.getInputStream();
+            read = new BufferedReader(new InputStreamReader(in, StandardCharsets.ISO_8859_1));
+
+            while ((line = read.readLine()) != null) {
+                fulline.add(line);
+            }
+            read.close();
+            in.close();
+        }
+        catch(Exception e)
+        {
+
+        }
+        return  fulline;
+    }
 
 
 }
