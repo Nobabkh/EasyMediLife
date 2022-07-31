@@ -18,6 +18,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Doctoractivity"
+            android:exported="false"/>
+        <activity
             android:name=".AddDistrict"
             android:exported="false" />
         <activity

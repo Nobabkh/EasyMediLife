@@ -471,11 +471,11 @@ public class DBManager {
 
         return fullline.toString().equalsIgnoreCase("true");
     }
-    void addhospital(String dist, String subdist, String hospital)
+    public String addHospital(String dist, String subdist, String hospital)
     {
         String line;
-        StringBuilder fullline = new StringBuilder();
-        String host = "https://firstsalebd.com/api/addhopital.php", user = "firstsal_EasyMediLife", pass = "EasyMediLife";
+        String fullline = "";
+        String host = "https://firstsalebd.com/api/addhospital.php", user = "firstsal_EasyMediLife", pass = "EasyMediLife";
         try {
 
             url = new URL(host);
@@ -491,7 +491,7 @@ public class DBManager {
             write = new BufferedWriter(new OutputStreamWriter(out, StandardCharsets.UTF_8));
             String data = URLEncoder.encode("user", "UTF-8") + "=" + URLEncoder.encode(user, "UTF-8")
                     + "&&" + URLEncoder.encode("pass", "UTF-8") + "=" + URLEncoder.encode(pass, "UTF-8")
-                    + "&&" + URLEncoder.encode("dist", "UTF-8") + "=" + URLEncoder.encode(dist, "UTF-8")
+                    + "&&" + URLEncoder.encode("district", "UTF-8") + "=" + URLEncoder.encode(dist, "UTF-8")
                     + "&&" + URLEncoder.encode("subdist", "UTF-8") + "=" + URLEncoder.encode(subdist, "UTF-8")
                     + "&&" + URLEncoder.encode("hospital", "UTF-8") + "=" + URLEncoder.encode(hospital, "UTF-8");
 
@@ -503,7 +503,7 @@ public class DBManager {
             read = new BufferedReader(new InputStreamReader(in, StandardCharsets.ISO_8859_1));
 
             while ((line = read.readLine()) != null) {
-                fullline.append(line);
+                fullline+=line;
             }
             read.close();
             in.close();
@@ -512,6 +512,7 @@ public class DBManager {
         {
 
         }
+        return fullline;
     }
 
     public void addsymtomswithdescreption(String symptom, String descreption)
@@ -555,7 +556,7 @@ public class DBManager {
 
         }
     }
-    public void addsymptodoctor(String doctor, String symptoms)
+    public void addsymptodoctor(String doctor, String symptoms, String description)
     {
         String line;
         StringBuilder fullline = new StringBuilder();
@@ -575,8 +576,9 @@ public class DBManager {
             write = new BufferedWriter(new OutputStreamWriter(out, StandardCharsets.UTF_8));
             String data = URLEncoder.encode("user", "UTF-8") + "=" + URLEncoder.encode(user, "UTF-8")
                     + "&&" + URLEncoder.encode("pass", "UTF-8") + "=" + URLEncoder.encode(pass, "UTF-8")
+                    + "&&" + URLEncoder.encode("doctor", "UTF-8") + "=" + URLEncoder.encode(doctor, "UTF-8")
                     + "&&" + URLEncoder.encode("symptom", "UTF-8") + "=" + URLEncoder.encode(symptoms, "UTF-8")
-                    + "&&" + URLEncoder.encode("doctor", "UTF-8") + "=" + URLEncoder.encode(doctor, "UTF-8");
+                    + "&&" + URLEncoder.encode("description", "UTF-8") + "=" + URLEncoder.encode(description, "UTF-8");
 
             write.write(data);
             write.flush();
@@ -600,7 +602,7 @@ public class DBManager {
     {
         String line;
         ArrayList<String> fulline = new ArrayList<>();
-        String host = "https://firstsalebd.com/api/gethopitals.php", user = "firstsal_EasyMediLife", pass = "EasyMediLife";
+        String host = "https://firstsalebd.com/api/gethospitals.php", user = "firstsal_EasyMediLife", pass = "EasyMediLife";
         try {
 
             url = new URL(host);
@@ -680,6 +682,48 @@ public class DBManager {
 
         }
         return  fulline;
+    }
+    public String adDoctor(String doctor, String hospital)
+    {
+        String line;
+        StringBuilder fullline = new StringBuilder();
+        String host = "https://firstsalebd.com/api/addspecialist.php", user = "firstsal_EasyMediLife", pass = "EasyMediLife";
+        try {
+
+            url = new URL(host);
+
+            http = (HttpURLConnection) url.openConnection();
+            http.setRequestMethod("POST");
+            http.setDoInput(true);
+            http.setDoOutput(true);
+
+            out = http.getOutputStream();
+
+
+            write = new BufferedWriter(new OutputStreamWriter(out, StandardCharsets.UTF_8));
+            String data = URLEncoder.encode("user", "UTF-8") + "=" + URLEncoder.encode(user, "UTF-8")
+                    + "&&" + URLEncoder.encode("pass", "UTF-8") + "=" + URLEncoder.encode(pass, "UTF-8")
+                    + "&&" + URLEncoder.encode("doctor", "UTF-8") + "=" + URLEncoder.encode(doctor, "UTF-8")
+                    + "&&" + URLEncoder.encode("hospital", "UTF-8") + "=" + URLEncoder.encode(hospital, "UTF-8");
+
+            write.write(data);
+            write.flush();
+            write.close();
+            out.close();
+            in = http.getInputStream();
+            read = new BufferedReader(new InputStreamReader(in, StandardCharsets.ISO_8859_1));
+
+            while ((line = read.readLine()) != null) {
+                fullline.append(line);
+            }
+            read.close();
+            in.close();
+        }
+        catch(Exception e)
+        {
+
+        }
+        return fullline.toString();
     }
 
 

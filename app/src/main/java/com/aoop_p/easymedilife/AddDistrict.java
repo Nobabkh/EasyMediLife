@@ -86,5 +86,7 @@ public class AddDistrict extends AppCompatActivity {
         });
         Button bt2 = findViewById(R.id.button4);
         bt2.setOnClickListener(view -> adddis());
+
     }
+
 }

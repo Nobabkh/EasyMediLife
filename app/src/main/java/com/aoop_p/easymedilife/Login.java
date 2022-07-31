@@ -64,7 +64,10 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.welcomeadminpanel);
         Button addist = findViewById(R.id.button6);
         Button adsubdis = findViewById(R.id.button7);
+        Button addoctor = findViewById(R.id.button9);
+        Button adhospital = findViewById(R.id.button8);
         Intent i = new Intent(Login.this, AddDistrict.class);
+        Intent j = new Intent(Login.this, Doctoractivity.class);
         addist.setOnClickListener(view -> {
             i.putExtra("extra", 0);
             startActivity(i);
@@ -72,6 +75,14 @@ public class Login extends AppCompatActivity {
         adsubdis.setOnClickListener(view ->{
             i.putExtra("extra", 1);
             startActivity(i);
+        });
+        addoctor.setOnClickListener(view -> {
+            j.putExtra("extra", 1);
+            startActivity(j);
+        });
+        adhospital.setOnClickListener(view -> {
+            j.putExtra("extra", 2);
+            startActivity(j);
         });
 
     }

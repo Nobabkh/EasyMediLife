@@ -23,6 +23,7 @@
     </string-array>
     <string name="sd">Select District:</string>
     <string name="ssd">Select Subdistrict:</string>
+    <string name="sh">Select Hospital</string>
     <string name="subdis">Ex Mirpur</string>
     <string name="add_subdis">Ad Subdistrict</string>
     <string name="add_dis">Ad District</string>
@@ -33,6 +34,7 @@
     <string name="adddoctor">Add Doctor</string>
     <string name="addsymp">Add symptoms</string>
     <string name="e_mail">E-mail:</string>
+    <string name="dname">Doctor\'s name</string>
 
 
     <string name="email_text">E-mail:</string>
@@ -49,6 +51,7 @@
     <string name="login_password_hint">Enter your password</string>
     <string name="loginpage_message">Not Registered yet?</string>
     <string name="loginpage_message_button">Click here to register</string>
+    <string name="hospitalname">Enter Hospital name</string>
 
 
 
